@@ -9,9 +9,7 @@ function missing(arr) {
         //const element = array[i];
         sum += arr[i]
     }
-
     let diff = sum_n - sum
     return diff
-
 }
 console.log(missing(arr))

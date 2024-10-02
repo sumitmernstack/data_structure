@@ -14,7 +14,7 @@ function find_max_ele(arr, window_size) {
             }
         }
         new_arr.push(max)
-       return "pink"
+      // return "pink"
 
     }
     return new_arr

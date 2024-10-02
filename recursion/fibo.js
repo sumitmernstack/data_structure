@@ -9,4 +9,4 @@ if(n<=1){
     return fibo(n-2) + fibo(n-1)
 }
 }
-console.log(fibo(5))
+console.log(fibo(0))

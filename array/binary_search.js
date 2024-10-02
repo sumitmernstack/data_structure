@@ -23,3 +23,5 @@ function binary_serach(arr, target) {
 }
 
 console.log(binary_serach(arr, 5))
+
+
