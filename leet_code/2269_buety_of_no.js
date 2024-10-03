@@ -7,7 +7,7 @@ function beuaty(number, window_size) {
     let counter = 0;
     for (let i = 0; i < num_len; i++) {
         value += number[i]
-    //    console.log(value)
+       console.log(value)
         if (i >= window_size-1) {
 
             if (number % parseInt(value) === 0) {
