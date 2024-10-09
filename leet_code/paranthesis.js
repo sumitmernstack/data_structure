@@ -29,10 +29,7 @@ function paranthesis(str) {
             stack.push("]")
         }
         else if(    stack.pop() !==str[i]){
-            // console.log(   )
-            // console.log("data",str[i]  + "==" +stack[stack.length-1])
-            // // str[i]==stack[stack.length-1]
-            // stack.pop()
+    
             return false
         }
 
