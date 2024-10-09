@@ -42,3 +42,34 @@ function paranthesis(str) {
     }
 }
 console.log(paranthesis(paran))
+
+
+
+
+let paran2 = "sumit()[]{}"
+
+function checkparan(params) {
+    let tmp = []
+    for (let i = 0; i < params.length; i++) {
+        if (!params[i].match(/[a-zA-Z0-9/s]/)) {
+            if (params[i] === "(") {
+                tmp.push(')')
+            }
+            else if (params[i] === "{") {
+                tmp.push('}')
+            }
+            else if (params[i] === "[") {
+                tmp.push(']')
+            } else if (params[i] != tmp.pop()) {
+                return false
+            }
+        } else {
+            console.log(params[i])
+        }
+
+
+    }
+    return true
+}
+
+console.log(checkparan(paran2),"data")

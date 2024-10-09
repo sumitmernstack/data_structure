@@ -21,7 +21,7 @@ function flat(arr) {
     return tmp.sort((a, b) => a - b)
 }
 
-console.log(flat(arr))
+//console.log(flat(arr))
 
 
 // Test examples
@@ -62,7 +62,7 @@ function paranthesis(str) {
 
 
 // Test examples
-console.log(paranthesis("ja)swi(nd)er)"))
+//console.log(paranthesis("ja)swi(nd)er)"))
 //console.log(paranthesis("))((“"));   
 
 function fetchspecialchar(params) {
@@ -76,29 +76,33 @@ function fetchspecialchar(params) {
     }
     return tmp
 }
-console.log(fetchspecialchar("ja)swi(nd)er)"))
+//console.log(fetchspecialchar("ja)swi(nd)er)"))
 
 
-let paran = "()[]{}"
+let paran = "sumit()[]{}"
 
 function checkparan(params) {
     let tmp = []
     for (let i = 0; i < params.length; i++) {
+        if (!params[i].match(/[a-zA-Z0-9/s]/)) {
+            if (params[i] === "(") {
+                tmp.push(')')
+            }
+            else if (params[i] === "{") {
+                tmp.push('}')
+            }
+            else if (params[i] === "[") {
+                tmp.push(']')
+            } else if (params[i] != tmp.pop()) {
+                return false
+            }
+        } else {
+            console.log(params[i])
+        }
 
-        if (params[i] === "(") {
-            tmp.push(')')
-        }
-        else if (params[i] === "{") {
-            tmp.push('}')
-        }
-        else if (params[i] === "[") {
-            tmp.push(']')
-        } else if (params[i] != tmp.pop()) {
-            return false
-        }
 
     }
     return true
 }
 
-console.log(checkparan(paran))
+console.log(checkparan(paran),"data")
