@@ -72,4 +72,6 @@ function checkparan(params) {
     return true
 }
 
-console.log(checkparan(paran2),"data")
+//console.log(checkparan(paran2),"data")
+
+ler 

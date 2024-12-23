@@ -1,7 +1,7 @@
 // function maxSumSubarray(arr, K) {
 //     let maxSum = 0;
 //     let windowSum = 0;
-    
+
 //     // Calculate the sum of the first window of size K
 //     for (let i = 0; i < K; i++) {
 //         console.log("i log",i)
@@ -11,7 +11,7 @@
 //     console.log(windowSum)
 //     // Set the maximum sum to be the sum of the first window
 //     maxSum = windowSum;
-    
+
 //     // Slide the window over the array
 
 //     for (let i = K; i < arr.length; i++) {
@@ -21,7 +21,7 @@
 //         console.log(windowSum,"--->")
 //         maxSum = Math.max(maxSum, windowSum); // Update the maxSum if the current windowSum is larger
 //     }
-    
+
 //     return maxSum;
 // }
 
@@ -31,11 +31,34 @@
 // console.log(maxSumSubarray(arr, K)); // Output: 9 (subarray [5, 1, 3])
 
 
+let arr = [10, 12, 2, 4, 13, 19, 5]
+let window_size = 3
 
 
-function slidingwindow(arr,win) {
-    
-    let max=0
-    let sum=0
+function slidingwindow(arr, window) {
+
+    let max = 0
+    let len = arr.length;
+    let i = 0
+    let j = 0;
+    let sum = 0
+    while (j < len) {
+        sum = sum + arr[j]
+        console.log("sum--->",sum)
+        if (j - i + 1 < window) {
+            j++
+        } else if (j - i + 1 == window) {
+            max = Math.max(sum, max)
+            console.log(`${i}--->`, max)
+            sum = sum - arr[i];
+            i++
+            j++
+        }
+
+      
+
+    }
+    return max
 
 }
+console.log(slidingwindow(arr, window_size))

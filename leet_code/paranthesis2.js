@@ -50,7 +50,7 @@ function paran(str) {
             if (stack.length > 0) {
                 stack.pop()
             } else {
-               // console.log(str[i])
+                // console.log(str[i])
                 invalidset.add(i)
             }
         }
@@ -69,8 +69,41 @@ function paran(str) {
     }
 
 
-return string
+    return string
 }
 // Test examples
-console.log(paran("ja)swi(nd)er)"));  // Output: "jaswi(nd)er"
-console.log(paran("))((“"));           // Output: ""
+// console.log(paran("ja)swi(nd)er)"));  // Output: "jaswi(nd)er"
+// console.log(paran("))((“"));           // Output: ""
+
+
+function p(params) {
+    let stack = [];
+    let invalid = new Set();
+    for (let i = 0; i < params.length; i++) {
+
+        if (params[i] == "(") {
+            stack.push(i)
+        } else if (params[i] == ")") {
+
+            if (stack.length > 0) {
+                stack.pop()
+            } else {
+                invalid.add(i)
+            }
+        }
+    }
+    while (stack.length > 0) {
+        invalid.add(stack.pop())
+    }
+    let res=""
+    for (let i = 0; i < params.length; i++) {
+        if(!invalid.has(i)){
+            res+=params[i]
+        }
+        
+    }
+    return res
+}
+// Test examples
+console.log(p("ja)swi(nd)er)"));  // Output: "jaswi(nd)er"
+console.log(p("))((“"));           // Output: ""
