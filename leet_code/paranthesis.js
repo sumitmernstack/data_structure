@@ -73,5 +73,3 @@ function checkparan(params) {
 }
 
 //console.log(checkparan(paran2),"data")
-
-ler 

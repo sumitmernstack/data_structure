@@ -67,4 +67,20 @@ function negativeNumber(arr, k) {
   return ans;
 }
 
-console.log(negativeNumber([5, -2, 3, 4, -5], 2));
+//console.log(negativeNumber([5, -2, 3, 4, -5], 2));
+
+function fnegnum(num, window) {
+  let tmp = []
+  for (let i = 0; i <= num.length - window; i++) {
+
+    for (let j = i; j <=window; j++) {
+console.log("ggggggg")
+      if (num[j] < 0) {
+        tmp.push(num[j])
+       break;
+      }
+    }
+  }
+  return tmp
+}
+console.log(fnegnum([12,-1,-7,8,-15,30,16,28],3))

@@ -163,36 +163,36 @@ function ro(arr, n) {
 }
 //console.log(ro(roa, 2))
 
-let arr1=[1,2,9,11,14]
-let arr2=[0,2,3,14,19]
-let c=[];
-function mergearr(a,b){
-    let m=a.length
-    let n=b.length
-    let i=0
-    let j=0
-    let k=0
+let arr1 = [1, 2, 9, 11, 14]
+let arr2 = [0, 2, 3, 14, 19]
+let c = [];
+function mergearr(a, b) {
+    let m = a.length
+    let n = b.length
+    let i = 0
+    let j = 0
+    let k = 0
 
-    while(m>i && n>j){
-        if(a[i]<b[j]){
-            c[k]=a[i]
+    while (m > i && n > j) {
+        if (a[i] < b[j]) {
+            c[k] = a[i]
             i++
             k++
-        }else{
-            c[k]=b[j]
+        } else {
+            c[k] = b[j]
             j++
             k++
         }
     }
-    while(m>i){
-        c[k]=a[i]
-            i++
-            k++
+    while (m > i) {
+        c[k] = a[i]
+        i++
+        k++
     }
-    while(n>j){
-        c[k]=b[j]
-            j++
-            k++
+    while (n > j) {
+        c[k] = b[j]
+        j++
+        k++
     }
     return c
 }
@@ -203,39 +203,121 @@ function mergearr(a,b){
 // let arr1=[1,2,9,11]
 // let arr2=[0,3,14,19]
 // let c=[];
-function unionarr(a,b){
-    let m=a.length
-    let n=b.length
-    let i=0
-    let j=0
-    let k=0
+function unionarr(a, b) {
+    let m = a.length
+    let n = b.length
+    let i = 0
+    let j = 0
+    let k = 0
 
-    while(m>i && n>j){
-        if(a[i]<b[j]){
-            c[k]=a[i]
+    while (m > i && n > j) {
+        if (a[i] < b[j]) {
+            c[k] = a[i]
             i++
             k++
-        }else if(a[i]>b[j]){
-            c[k]=b[j]
+        } else if (a[i] > b[j]) {
+            c[k] = b[j]
             j++
             k++
-        }else{
-            c[k]=b[j]
+        } else {
+            c[k] = b[j]
             j++
             k++
             i++
         }
     }
-    while(m>i){
-        c[k]=a[i]
-            i++
-            k++
+    while (m > i) {
+        c[k] = a[i]
+        i++
+        k++
     }
-    while(n>j){
-        c[k]=b[j]
-            j++
-            k++
+    while (n > j) {
+        c[k] = b[j]
+        j++
+        k++
     }
     return c
 }
-console.log(unionarr(arr1,arr2))
+//console.log(unionarr(arr1,arr2))
+
+//max_min
+let min_arr = [3, 4, 5, 1, 2, 4]
+
+function min(arr) {
+    let max = 0
+    for (let i = 1; i < arr.length; i++) {
+
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    return max
+}
+
+//console.log(min(min_arr))
+//delete
+
+let dele = [1, 2, 3, 4, 5, 6]
+
+function delete1(del, index) {
+
+    for (let i = index; i < del.length; i++) {
+        del[i] = del[i + 1]
+    }
+    del.length--;
+    return del;
+}
+//console.log(delete1(dele,2))
+
+//insert
+function insert(dele, index, ele) {
+    for (let i = dele.length - 1; i >= index; i--) {
+        dele[i + 1] = dele[i]
+    }
+    dele[index] = ele;
+    return dele
+}
+
+//console.log(insert(dele,3,10))
+
+//MISSING
+let a1 = [1, 2, 3, 4, 5, 7, 8, 10, 11]
+function mi(a1) {
+    let diff = a1[0] - 0
+
+    for (let i = 1; i < a1.length; i++) {
+        let current = a1[i] - i
+        if (current > diff) {
+            // return diff+i
+            while (current > diff) {
+                console.log(diff + i)
+                diff++
+            }
+        }
+
+    }
+
+}
+mi(a1)
+
+//binary search
+
+let barr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+function bs(arr,target) {
+    let r = arr.length
+    let l = 0
+    let mid = Math.floor((l + r) / 2)
+
+    while(r>l){
+
+        if(mid[i] == target){
+            return mid
+        }
+
+        if(target >mid[i]){
+
+        }
+    }
+
+}

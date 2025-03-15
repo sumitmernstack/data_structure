@@ -34,7 +34,7 @@
 let arr = [10, 12, 2, 4, 13, 19, 5]
 let window_size = 3
 
-
+// 
 function slidingwindow(arr, window) {
 
     let max = 0
@@ -44,7 +44,7 @@ function slidingwindow(arr, window) {
     let sum = 0
     while (j < len) {
         sum = sum + arr[j]
-        console.log("sum--->",sum)
+        //  console.log("sum--->", sum)
         if (j - i + 1 < window) {
             j++
         } else if (j - i + 1 == window) {
@@ -55,10 +55,31 @@ function slidingwindow(arr, window) {
             j++
         }
 
-      
+
 
     }
     return max
 
 }
-console.log(slidingwindow(arr, window_size))
+//console.log(slidingwindow(arr, window_size))
+//https://www.youtube.com/watch?v=uqGxFk0cEdI
+//[3,8,2,5,7,6,12]
+function sumOfSubArr(arr, window) {
+    let current = 0;
+
+    for (let i = 0; i < window; i++) {
+        current = current + arr[i]
+    }
+
+    let max = current
+    for (let i = 1; i <=arr.length - window; i++) {
+        current = current - arr[i - 1] + arr[i - 1 + window]
+        if(current>max){
+            max=current
+        }
+    }
+    return max
+
+}
+
+console.log(sumOfSubArr([3, 8, 2, 5, 7, 6, 12], 4))
