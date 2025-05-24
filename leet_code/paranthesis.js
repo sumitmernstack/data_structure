@@ -11,7 +11,7 @@ function remove_paranthesis(str) {
     return specialchar
 }
 
-//console.log(remove_paranthesis(string))
+//console.log('---->',remove_paranthesis(string))
 
 let paran = "()[]{}"
 
@@ -41,7 +41,7 @@ function paranthesis(str) {
         return false
     }
 }
-console.log(paranthesis(paran))
+//console.log(paranthesis(paran))
 
 
 
@@ -64,7 +64,7 @@ function checkparan(params) {
                 return false
             }
         } else {
-            console.log(params[i])
+            console.log("else part",params[i])
         }
 
 
@@ -72,4 +72,4 @@ function checkparan(params) {
     return true
 }
 
-//console.log(checkparan(paran2),"data")
+console.log(checkparan(paran2),"data")

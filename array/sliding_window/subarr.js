@@ -83,3 +83,20 @@ function sumOfSubArr(arr, window) {
 }
 
 console.log(sumOfSubArr([3, 8, 2, 5, 7, 6, 12], 4))
+
+function sunarrsum(arr,window) {
+    
+    let currentsum=0
+    for (let i = 0; i < window; i++) {
+        currentsum+=arr[i]
+    }
+let max=currentsum
+    for (let i = 1; i <= arr.length-window; i++) {
+        currentsum=currentsum -arr[i-1] + arr[i-1+window] 
+        if(currentsum >max){
+           max= currentsum
+        }
+    }
+    return max
+}
+console.log(sunarrsum([3, 8, 2, 5, 7, 6, 12], 4))

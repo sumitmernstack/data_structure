@@ -73,13 +73,13 @@ function paran(str) {
 }
 // Test examples
 // console.log(paran("ja)swi(nd)er)"));  // Output: "jaswi(nd)er"
-// console.log(paran("))((“"));           // Output: ""
+ console.log(paran("))((“"));           // Output: ""
 
 
 function p(params) {
     let stack = [];
     let invalid = new Set();
-    for (let i = 0; i < params.length; i++) {
+    for (let i = 0; i < params.length; i++) {//[ ]  {2,12}
 
         if (params[i] == "(") {
             stack.push(i)
@@ -92,10 +92,15 @@ function p(params) {
             }
         }
     }
+    console.log(stack)
+    console.log(invalid)
     while (stack.length > 0) {
+        console.log("in while")
         invalid.add(stack.pop())
     }
     let res=""
+    console.log("====>",stack)
+    console.log("=====>",invalid)
     for (let i = 0; i < params.length; i++) {
         if(!invalid.has(i)){
             res+=params[i]
@@ -105,5 +110,5 @@ function p(params) {
     return res
 }
 // Test examples
-console.log(p("ja)swi(nd)er)"));  // Output: "jaswi(nd)er"
+//console.log(p("ja)swi(nd)er)"));  // Output: "jaswi(nd)er"
 console.log(p("))((“"));           // Output: ""

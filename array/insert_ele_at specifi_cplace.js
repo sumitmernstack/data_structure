@@ -9,4 +9,5 @@ function insert(array, index, ele) {
     return array
 }
 
+
 console.log(insert(array, 2, 66))

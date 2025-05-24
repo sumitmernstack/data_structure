@@ -38,3 +38,5 @@ function mergearr(a, b) {
 }
 
 console.log(mergearr(a, b))
+
+

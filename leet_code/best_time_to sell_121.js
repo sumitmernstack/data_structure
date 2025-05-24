@@ -42,3 +42,24 @@ function best(arr) {
     return max_profit
 }
 console.log(best(rateval))
+
+//[7,2,4,5,1,3,6,4]
+
+function sell(price){
+    
+    let buy_price=price[0]
+    
+    let max_profit=0
+    
+    for(let i=1;i<price.length;i++){
+        if(price[i]<buy_price){
+           buy_price = price[i]
+        }
+        else{
+        let current=price[i]-buy_price
+        max_profit=Math.max(current,max_profit)
+        }
+    }
+    return max_profit
+}
+console.log(sell([7,2,4,5,1,3,6,4]))
