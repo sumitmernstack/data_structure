@@ -13,3 +13,22 @@ function rev(arr) {
 }
 
 console.log(rev(arr))
+
+//using two pointer
+let a=[1,2,3,4,5,6,7,8,9]
+
+function rev(arr){
+    let r=0
+    let l=arr.length-1
+    while(l>r){
+        let tmp=arr[r]
+        arr[r]=arr[l]
+        arr[l]=tmp
+        
+        r++
+        l--
+    }
+    return arr
+}
+
+console.log(rev(a))
